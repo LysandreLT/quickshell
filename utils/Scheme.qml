@@ -1,0 +1,57 @@
+pragma Singleton
+pragma ComponentBehavior: Bound
+
+import Quickshell
+import QtQuick
+
+Singleton {
+    id: schemeRoot
+
+    property color primary: "#7E570F"
+    property color textOnPrimary: "#FFFFFF"
+    property color primaryContainer: "#FFDDB0"
+    property color textOnPrimaryContainer: "#614000"
+    property color secondary: "#6F5B40"
+    property color textOnSecondary: "#FFFFFF"
+    property color secondaryContainer: "#FADEBB"
+    property color textOnSecondaryContainer: "#56442A"
+    property color tertiary: "#506441"
+    property color textOnTertiary: "#FFFFFF"
+    property color tertiaryContainer: "#D2EABD"
+    property color textOnTertiaryContainer: "#394C2B"
+    property color error: "#BA1A1A"
+    property color textOnError: "#FFFFFF"
+    property color errorContainer: "#FFDAD6"
+    property color textOnErrorContainer: "#93000A"
+    property color background: "#FFF8F3"
+    property color textOnBackground: "#201B13"
+    property color surface: "#FFF8F3"
+    property color textOnSurface: "#201B13"
+    property color surfaceVariant: "#EFE0CF"
+    property color textOnSurfaceVariant: "#4F4539"
+    property color outline: "#817567"
+    property color outlineVariant: "#D3C4B4"
+    property color shadow: "#000000"
+    property color inverseSurface: "#362F27"
+    property color textOnInverseSurface: "#FBEFE2"
+    property color inversePrimary: "#F3BD6E"
+    property color primaryFixed: "#FFDDB0"
+    property color textOnPrimaryFixed: "#291800"
+    property color primaryFixedDim: "#F3BD6E"
+    property color textOnPrimaryFixedVariant: "#614000"
+    property color secondaryFixed: "#FADEBB"
+    property color textOnSecondaryFixed: "#261904"
+    property color secondaryFixedDim: "#DCC3A1"
+    property color textOnSecondaryFixedVariant: "#56442A"
+    property color tertiaryFixed: "#D2EABD"
+    property color textOnTertiaryFixed: "#0F2004"
+    property color tertiaryFixedDim: "#B7CEA2"
+    property color textOnTertiaryFixedVariant: "#394C2B"
+    property color surfaceDim: "#E4D8CC"
+    property color surfaceBright: "#FFF8F3"
+    property color surfaceContainerLowest: "#FFFFFF"
+    property color surfaceContainerLow: "#FEF2E5"
+    property color surfaceContainer: "#F8ECDF"
+    property color surfaceContainerHigh: "#F3E6DA"
+    property color surfaceContainerHighest: "#EDE1D4"
+}
