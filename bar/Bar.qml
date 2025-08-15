@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import "powerButton"
+import "workspaceIndicator"
 
 Item{
     id: bar
@@ -16,24 +17,22 @@ Item{
         }
 
         color: "transparent"
-        implicitHeight: 30
+
+        implicitHeight: 40
 
         RowLayout {
             id: barLayout
             anchors.fill: parent
 
-            PowerButton {}
-            
-            SystemClock {
-                id: clock
-                precision: SystemClock.Seconds
+            PowerButton {
+                Layout.fillHeight: true
+            }
+
+            WorkspaceBar {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillHeight: true
             }
             
-            Text {
-                Layout.alignment: Qt.AlignRight
-                text: Qt.formatDateTime(clock.date, "hh:mm:ss - yyyy-MM-dd")
-                color: "blue"
-            }
         }
     }
 }

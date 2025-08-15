@@ -6,18 +6,25 @@ import qs.utils
 Item {
     id: root
     property alias menu: powerMenu
-
-    Layout.alignment: Qt.AlignTop
+    Layout.fillHeight: true
 
     Button {
         id: powerButton
+        Layout.fillHeight: true
+        width: height * 1.618
+
         icon.source: "../../icons/power.svg"
         icon.color: Scheme.textOnPrimary
+
+        icon.width: root.height * 0.8
+        icon.height: root.height * 0.8
+
         background: Rectangle {
-            implicitHeight: 30
-            implicitWidth: 50
+            anchors.fill: parent
             color: Scheme.primary
+            radius: 4
         }
+
         onClicked: root.menu.visible = !root.menu.visible
     }
 
@@ -27,3 +34,4 @@ Item {
         anchors.left: powerButton.left
     }
 }
+
