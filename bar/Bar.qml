@@ -18,8 +18,7 @@ Item{
 
         color: "transparent"
 
-        implicitHeight: 40
-
+        implicitHeight: 50
         RowLayout {
             id: barLayout
             anchors.fill: parent

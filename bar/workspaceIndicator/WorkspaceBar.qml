@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import Quickshell.Hyprland
+import Quickshell
+import Quickshell.Widgets
 import qs.utils
 
 Rectangle {
@@ -25,14 +27,15 @@ Rectangle {
                 id: wsRect
                 property var workspaceItem: modelData
                 property bool hovered: false
+                property color hoverColor: Scheme.primaryContainer
 
                 Layout.preferredWidth: backgroundRect.height * 0.75
                 Layout.preferredHeight: backgroundRect.height * 0.75
                 radius: 4
+                
                 border.width: 1
                 border.color: Scheme.outline
 
-                property color hoverColor: Scheme.primaryContainer
                 color: workspaceItem.id === Hyprland.focusedWorkspace.id
                         ? Scheme.primary
                         : (hovered ? hoverColor : Scheme.surface)
@@ -41,13 +44,10 @@ Rectangle {
                     ColorAnimation { duration: 150; easing.type: Easing.OutCubic }
                 }
 
-                Text {
+                IconImage {
+                    source: Quickshell.iconPath(DesktopEntries.heuristicLookup(workspaceItem.toplevels.values[0].wayland.appId).icon)
+                    implicitSize: parent.height * 0.9
                     anchors.centerIn: parent
-                    text: workspaceItem.id
-                    color: workspaceItem.id === Hyprland.focusedWorkspace.id
-                            ? Scheme.textOnPrimary
-                            : Scheme.textOnSurface
-                    font.pixelSize: 12
                 }
 
                 MouseArea {
