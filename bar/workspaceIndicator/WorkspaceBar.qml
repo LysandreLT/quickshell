@@ -11,12 +11,12 @@ Rectangle {
     border.color: Scheme.outline
     border.width: 1
 
-    implicitWidth: rowLayout.implicitWidth + 24
+    implicitWidth: rowLayout.implicitWidth + height * 0.25
 
 
     RowLayout {
         id: rowLayout
-        spacing: 8
+        spacing: backgroundRect.height * 0.125
         anchors.centerIn: parent
 
         Repeater {
