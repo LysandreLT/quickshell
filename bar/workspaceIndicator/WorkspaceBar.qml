@@ -55,7 +55,7 @@ Rectangle {
                     hoverEnabled: true
                     onEntered: hovered = true
                     onExited: hovered = false
-                    onClicked: workspaceItem.activate()
+                    onClicked: workspaceItem.id != Hyprland.focusedWorkspace.id && workspaceItem.activate()
                 }
             }
         }
