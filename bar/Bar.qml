@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import "powerButton"
 import "workspaceIndicator"
+import "clock"
 
 Item{
     id: bar
@@ -19,6 +20,7 @@ Item{
         color: "transparent"
 
         implicitHeight: 50
+
         RowLayout {
             id: barLayout
             anchors.fill: parent
@@ -29,6 +31,11 @@ Item{
 
             WorkspaceBar {
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillHeight: true
+            }
+
+            Clock {
+                Layout.alignment:  Qt.AlignRight
                 Layout.fillHeight: true
             }
             
