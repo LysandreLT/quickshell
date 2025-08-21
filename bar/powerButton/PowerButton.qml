@@ -6,6 +6,7 @@ import qs.utils
 Item {
     id: root
     property alias menu: powerMenu
+    implicitWidth: powerButton.implicitWidth
 
     Button {
         id: powerButton
@@ -14,11 +15,6 @@ Item {
         icon.color: Scheme.textOnPrimary
         icon.height: root.height * 0.8
         icon.width: root.height * 0.8
-
-        leftPadding: 0
-        rightPadding: 0
-        topPadding: 0
-        bottomPadding: 0
 
         background: Rectangle {
             implicitWidth: powerButton.height * 1.618

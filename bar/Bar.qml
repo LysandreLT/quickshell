@@ -24,6 +24,7 @@ Item{
         RowLayout {
             id: barLayout
             anchors.fill: parent
+            uniformCellSizes: true
 
             PowerButton {
                 Layout.fillHeight: true
