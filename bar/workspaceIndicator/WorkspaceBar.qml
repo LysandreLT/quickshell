@@ -9,7 +9,7 @@ import qs.utils
 Rectangle {
     id: backgroundRect
     radius: 4
-    color: Scheme.surfaceContainer
+    color: Scheme.surface
     border.color: Scheme.outline
     border.width: 1
 
@@ -38,7 +38,7 @@ Rectangle {
 
                 color: workspaceItem.id === Hyprland.focusedWorkspace.id
                         ? Scheme.primary
-                        : (hovered ? hoverColor : Scheme.surface)
+                        : (hovered ? hoverColor : Scheme.surfaceContainer)
 
                 Behavior on color {
                     ColorAnimation { duration: 150; easing.type: Easing.OutCubic }
