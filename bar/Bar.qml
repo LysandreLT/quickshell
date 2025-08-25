@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import "powerButton"
 import "workspaceIndicator"
 import "clock"
+import "weather"
 
 Item{
     id: bar
@@ -19,7 +20,7 @@ Item{
 
         color: "transparent"
 
-        implicitHeight: 50
+        implicitHeight: 40
 
         RowLayout {
             id: barLayout
@@ -32,6 +33,11 @@ Item{
 
             WorkspaceBar {
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillHeight: true
+            }
+
+            WeatherWidget {
+                Layout.alignment: Qt.AlignRight
                 Layout.fillHeight: true
             }
 
