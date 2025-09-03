@@ -9,43 +9,50 @@ import "weather"
 Item{
     id: bar
 
-    PanelWindow {
-        id: barRoot
+    Variants {
+        model: Quickshell.screens
 
-        anchors {
-            left: true
-            top: true
-            right: true
-        }
+        PanelWindow {
+            id: barRoot
+            required property var modelData
+            screen: modelData
 
-        color: "transparent"
+            anchors {
+                left: true
+                top: true
+                right: true
+            }
 
-        implicitHeight: 40
+            color: "transparent"
 
-        RowLayout {
-            id: barLayout
-            anchors.fill: parent
+            implicitHeight: 40
+
+            RowLayout {
+                id: barLayout
+                anchors.fill: parent
             uniformCellSizes: true
 
-            PowerButton {
-                Layout.fillHeight: true
-            }
+                PowerButton {
+                    Layout.fillHeight: true
+                }
 
-            WorkspaceBar {
-                Layout.alignment: Qt.AlignHCenter
-                Layout.fillHeight: true
-            }
+                WorkspaceBar {
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.fillHeight: true
+                    screen: barRoot.screen
+                }
 
-            WeatherWidget {
-                Layout.alignment: Qt.AlignRight
-                Layout.fillHeight: true
-            }
+                WeatherWidget {
+                    Layout.alignment: Qt.AlignRight
+                    Layout.fillHeight: true
+                }
 
-            Clock {
-                Layout.alignment:  Qt.AlignRight
-                Layout.fillHeight: true
+                Clock {
+                    Layout.alignment:  Qt.AlignRight
+                    Layout.fillHeight: true
+                }
+                
             }
-            
         }
     }
 }

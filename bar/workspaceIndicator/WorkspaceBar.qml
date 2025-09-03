@@ -8,6 +8,8 @@ import qs.utils
 
 Rectangle {
     id: backgroundRect
+    required property var screen
+
     radius: 4
     color: Scheme.surface
     border.color: Scheme.outline
@@ -22,7 +24,7 @@ Rectangle {
         anchors.centerIn: parent
 
         Repeater {
-            model: Hyprland.workspaces
+            model: Hyprland.workspaces.values.filter(workspace => workspace.monitor.name === backgroundRect.screen.name)
             delegate: Rectangle {
                 id: wsRect
                 property var workspaceItem: modelData
