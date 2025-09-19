@@ -24,31 +24,35 @@ Item{
             }
 
             color: "transparent"
-
             implicitHeight: 40
 
             RowLayout {
                 id: barLayout
                 anchors.fill: parent
-            uniformCellSizes: true
+                spacing: 0
 
                 PowerButton {
                     Layout.fillHeight: true
                 }
 
+                Item {
+                    Layout.fillWidth: true
+                }
+
                 WorkspaceBar {
-                    Layout.alignment: Qt.AlignHCenter
                     Layout.fillHeight: true
                     screen: barRoot.screen
                 }
 
+                Item {
+                    Layout.fillWidth: true
+                }
+
                 WeatherWidget {
-                    Layout.alignment: Qt.AlignRight
                     Layout.fillHeight: true
                 }
 
                 Clock {
-                    Layout.alignment:  Qt.AlignRight
                     Layout.fillHeight: true
                 }
                 
