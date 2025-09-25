@@ -5,6 +5,7 @@ import "powerButton"
 import "workspaceIndicator"
 import "clock"
 import "weather"
+import "systemTray"
 
 Item{
     id: bar
@@ -49,6 +50,10 @@ Item{
                 }
 
                 WeatherWidget {
+                    Layout.fillHeight: true
+                }
+
+                SystemTray {
                     Layout.fillHeight: true
                 }
 
