@@ -3,7 +3,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell.Widgets
 import qs.utils
-import qs.icons
 
 Rectangle {
     id: weatherBackgroundRect

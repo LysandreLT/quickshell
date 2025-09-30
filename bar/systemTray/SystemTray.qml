@@ -5,7 +5,6 @@ import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 import qs.utils
-import qs.icons
 
 Rectangle {
     id: systemTrayBackgroundRect

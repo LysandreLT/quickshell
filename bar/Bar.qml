@@ -6,6 +6,7 @@ import "workspaceIndicator"
 import "clock"
 import "weather"
 import "systemTray"
+import "systemInfo"
 
 Item{
     id: bar
@@ -33,6 +34,10 @@ Item{
                 spacing: 0
 
                 PowerButton {
+                    Layout.fillHeight: true
+                }
+
+                SystemInfo {
                     Layout.fillHeight: true
                 }
 
