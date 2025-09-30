@@ -48,8 +48,8 @@ Rectangle {
 
                 IconImage {
                     source: Quickshell.iconPath(DesktopEntries.heuristicLookup(workspaceItem.toplevels.values[0].wayland.appId).icon)
-                    implicitSize: parent.height * 0.9
-                    anchors.centerIn: parent
+                    implicitSize: wsRect.height * 0.94
+                    anchors.centerIn: wsRect
                 }
 
                 MouseArea {
