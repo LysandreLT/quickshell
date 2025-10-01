@@ -66,7 +66,7 @@ Item {
 
     Image {
         id: iconImage
-        source: encodeURIComponent(iconUrl)
+        source: iconUrl
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.verticalCenterOffset: gaugeRoot.height * 0.3

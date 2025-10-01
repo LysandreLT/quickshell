@@ -22,7 +22,7 @@ Item {
             primaryColor: Scheme.primary
             primaryContainerColor: Scheme.primaryContainer
             textOnPrimaryContainerColor: Scheme.textOnPrimaryContainer
-            iconUrl: "/../../icons/cpu.svg"
+            iconUrl: "../../icons/cpu.svg"
         }
 
         CircularGauge {
@@ -33,7 +33,7 @@ Item {
             primaryColor: Scheme.secondary
             primaryContainerColor: Scheme.secondaryContainer
             textOnPrimaryContainerColor: Scheme.textOnSecondaryContainer
-            iconUrl: "/../../icons/gpu.svg"
+            iconUrl: "../../icons/gpu.svg"
         }
 
         CircularGauge {
@@ -44,7 +44,7 @@ Item {
             primaryColor: Scheme.tertiary
             primaryContainerColor: Scheme.tertiaryContainer
             textOnPrimaryContainerColor: Scheme.textOnTertiaryContainer
-            iconUrl: "/../../icons/disk.svg"
+            iconUrl: "../../icons/disk.svg"
         }
     }
 
