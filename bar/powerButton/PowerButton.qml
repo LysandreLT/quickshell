@@ -1,37 +1,50 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 import qs.utils
 
 Item {
-    id: root
+    id: powerButtonRoot
     property alias menu: powerMenu
-    implicitWidth: powerButton.implicitWidth
+    implicitWidth: height * 1.618
 
-    Button {
-        id: powerButton
+    Rectangle {
+        id: powerButtonRect
+        
+        width: powerButtonRoot.width * 0.75
+        height: powerButtonRoot.height * 0.75
+        anchors.centerIn: parent
 
-        icon.source: "../../icons/power.svg"
-        icon.color: Scheme.textOnPrimary
-        icon.height: root.height * 0.8
-        icon.width: root.height * 0.8
+        color: Scheme.primary
+        border.width: 1
+        border.color: Scheme.outlineVariant
+        radius: 4
 
-        background: Rectangle {
-            implicitWidth: powerButton.height * 1.618
-            implicitHeight: root.height
-            color: Scheme.primary
-            border.color: Scheme.outlineVariant
-            border.width: 1
-            radius: 4
+        Image {
+            id: iconImage
+            source: "../../icons/power.svg"
+            anchors.centerIn: powerButtonRect
+            sourceSize.width: powerButtonRect.height * 0.8
+            sourceSize.height: powerButtonRect.height * 0.8
         }
 
-        onClicked: root.menu.visible = !root.menu.visible
+        ColorOverlay {
+            anchors.fill: iconImage
+            source: iconImage
+            color: Scheme.textOnPrimary
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: powerButtonRoot.menu.visible = !powerButtonRoot.menu.visible
+        }
     }
 
     PowerMenu {
         id: powerMenu
-        anchors.top: powerButton.bottom
-        anchors.left: powerButton.left
+        anchors.top: powerButtonRoot.bottom
+        anchors.left: powerButtonRoot.left
     }
 }
 
