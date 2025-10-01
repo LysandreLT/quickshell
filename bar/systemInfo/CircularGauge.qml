@@ -70,8 +70,8 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.verticalCenterOffset: gaugeRoot.height * 0.3
-        width: gaugeRoot.height * 0.6
-        height: gaugeRoot.height * 0.6
+        sourceSize.width: gaugeRoot.height * 0.6
+        sourceSize.height: gaugeRoot.height * 0.6
     }
 
     ColorOverlay {
