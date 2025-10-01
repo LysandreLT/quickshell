@@ -4,12 +4,8 @@ import QtQuick.Layouts
 import Quickshell.Widgets
 import qs.utils
 
-Rectangle {
-    id: weatherBackgroundRect
-    radius: 4
-    color: Scheme.surface
-    border.color: Scheme.outline
-    border.width: 1
+Item {
+    id: weatherWidgetRoot
     implicitWidth: weatherLayout.implicitWidth + height * 0.25
 
     function fetchWeather() {
@@ -97,7 +93,7 @@ Rectangle {
         Text {
             id: weatherEmoji
             font.family: "Noto Sans Mono"
-            font.pixelSize: weatherBackgroundRect.height * 0.7
+            font.pixelSize: weatherWidgetRoot.height * 0.7
             color: Scheme.textOnSurface
             fontSizeMode: Text.Fit
         }
@@ -106,7 +102,7 @@ Rectangle {
             id: temperatureText
             font.family: "Noto Sans Mono"
             font.weight: 550
-            font.pixelSize: weatherBackgroundRect.height * 0.4
+            font.pixelSize: weatherWidgetRoot.height * 0.4
             color: Scheme.textOnSurface
             fontSizeMode: Text.Fit
         }

@@ -7,6 +7,7 @@ import "clock"
 import "weather"
 import "systemTray"
 import "systemInfo"
+import qs.utils
 
 Item{
     id: bar
@@ -33,39 +34,70 @@ Item{
                 anchors.fill: parent
                 spacing: 0
 
-                PowerButton {
+                Rectangle {
                     Layout.fillHeight: true
-                }
+                    implicitWidth: leftLayout.implicitWidth
+                    
+                    color: Scheme.surface
+                    border.color: Scheme.outline
+                    border.width: 1
+                    radius: 4
 
-                SystemInfo {
-                    Layout.fillHeight: true
+                    RowLayout {
+                        id: leftLayout
+                        anchors.fill: parent
+                        spacing: 0
+                        
+                        PowerButton { Layout.fillHeight: true }
+                        SystemInfo { Layout.fillHeight: true }
+                    }
                 }
 
                 Item {
                     Layout.fillWidth: true
                 }
 
-                WorkspaceBar {
+                Rectangle {
                     Layout.fillHeight: true
-                    screen: barRoot.screen
+                    implicitWidth: middleLayout.implicitWidth
+                    
+                    color: Scheme.surface
+                    border.color: Scheme.outline
+                    border.width: 1
+                    radius: 4
+                    
+                    RowLayout {
+                        id: middleLayout
+                        anchors.fill: parent
+                        spacing: 0
+                        
+                        WorkspaceBar { Layout.fillHeight: true; screen: barRoot.screen }
+                    }
                 }
 
                 Item {
                     Layout.fillWidth: true
                 }
 
-                WeatherWidget {
+                Rectangle {
                     Layout.fillHeight: true
+                    implicitWidth: rightLayout.implicitWidth
+                    
+                    color: Scheme.surface
+                    border.color: Scheme.outline
+                    border.width: 1
+                    radius: 4
+                    
+                    RowLayout {
+                        id: rightLayout
+                        anchors.fill: parent
+                        spacing: 0
+                        
+                        WeatherWidget { Layout.fillHeight: true }
+                        SystemTray { Layout.fillHeight: true }
+                        Clock { Layout.fillHeight: true }
+                    }
                 }
-
-                SystemTray {
-                    Layout.fillHeight: true
-                }
-
-                Clock {
-                    Layout.fillHeight: true
-                }
-                
             }
         }
     }

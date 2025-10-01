@@ -4,12 +4,8 @@ import QtQuick.Layouts
 import qs.utils
 
 
-Rectangle {
-    id: clockBackgroundRect
-    radius: 4
-    color: Scheme.surface
-    border.color: Scheme.outline
-    border.width: 1
+Item {
+    id: clockRoot
     implicitWidth: clockText.width + height * 0.25
 
     ColumnLayout {
@@ -21,7 +17,7 @@ Rectangle {
             text: Time.time
             font.family: "Noto Sans Mono"
             font.weight: 550
-            font.pixelSize: clockBackgroundRect.height * 0.6
+            font.pixelSize: clockRoot.height * 0.6
             color: Scheme.textOnSurface
             Layout.alignment: Qt.AlignHCenter
             fontSizeMode: Text.Fit
@@ -32,7 +28,7 @@ Rectangle {
             text: Time.date
             font.family: "Noto Sans Mono"
             font.weight: 550
-            font.pixelSize: clockBackgroundRect.height * 0.3
+            font.pixelSize: clockRoot.height * 0.3
             color: Scheme.textOnSurface
             Layout.alignment: Qt.AlignHCenter
             fontSizeMode: Text.Fit

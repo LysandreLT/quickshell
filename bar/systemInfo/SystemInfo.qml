@@ -5,12 +5,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import qs.utils
 
-Rectangle {
-    id: systemInfoBackgroundRect
-    color: Scheme.surface
-    border.color: Scheme.outline
-    border.width: 1
-    radius: 4
+Item {
+    id: systemInfoRoot
     implicitWidth: systemInfoLayout.width + height * 0.25
 
     RowLayout {
@@ -20,8 +16,8 @@ Rectangle {
 
         CircularGauge {
             id: cpuGauge
-            Layout.preferredWidth: systemInfoBackgroundRect.height * 0.75
-            Layout.preferredHeight: systemInfoBackgroundRect.height * 0.75
+            Layout.preferredWidth: systemInfoRoot.height * 0.75
+            Layout.preferredHeight: systemInfoRoot.height * 0.75
             value: 0
             primaryColor: Scheme.primary
             primaryContainerColor: Scheme.primaryContainer
@@ -31,8 +27,8 @@ Rectangle {
 
         CircularGauge {
             id: gpuGauge
-            Layout.preferredWidth: systemInfoBackgroundRect.height * 0.75
-            Layout.preferredHeight: systemInfoBackgroundRect.height * 0.75
+            Layout.preferredWidth: systemInfoRoot.height * 0.75
+            Layout.preferredHeight: systemInfoRoot.height * 0.75
             value: 0
             primaryColor: Scheme.secondary
             primaryContainerColor: Scheme.secondaryContainer
@@ -42,8 +38,8 @@ Rectangle {
 
         CircularGauge {
             id: diskGauge
-            Layout.preferredWidth: systemInfoBackgroundRect.height * 0.75
-            Layout.preferredHeight: systemInfoBackgroundRect.height * 0.75
+            Layout.preferredWidth: systemInfoRoot.height * 0.75
+            Layout.preferredHeight: systemInfoRoot.height * 0.75
             value: 0
             primaryColor: Scheme.tertiary
             primaryContainerColor: Scheme.tertiaryContainer

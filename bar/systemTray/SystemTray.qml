@@ -6,12 +6,8 @@ import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 import qs.utils
 
-Rectangle {
-    id: systemTrayBackgroundRect
-    radius: 4
-    color: Scheme.surface
-    border.color: Scheme.outline
-    border.width: 1
+Item {
+    id: systemTrayRoot
     implicitWidth: systemTrayLayout.implicitWidth > 0 ? systemTrayLayout.implicitWidth + height * 0.25 : 0
 
     PopupWindow {
@@ -22,7 +18,7 @@ Rectangle {
     RowLayout {
         id: systemTrayLayout
         anchors.centerIn: parent
-        spacing: systemTrayBackgroundRect.height * 0.125        
+        spacing: systemTrayRoot.height * 0.125        
 
         Repeater {
             model: SystemTray.items
@@ -31,8 +27,8 @@ Rectangle {
                 id: trayItemRectangle
                 property var trayItem: modelData
 
-                Layout.preferredWidth: systemTrayBackgroundRect.height * 0.75
-                Layout.preferredHeight: systemTrayBackgroundRect.height * 0.75
+                Layout.preferredWidth: systemTrayRoot.height * 0.75
+                Layout.preferredHeight: systemTrayRoot.height * 0.75
                 radius: 4
 
                 IconImage {

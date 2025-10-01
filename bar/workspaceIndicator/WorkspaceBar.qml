@@ -6,33 +6,28 @@ import Quickshell
 import Quickshell.Widgets
 import qs.utils
 
-Rectangle {
-    id: backgroundRect
+Item {
+    id: workspaceBarRoot
     required property var screen
-
-    radius: 4
-    color: Scheme.surface
-    border.color: Scheme.outline
-    border.width: 1
 
     implicitWidth: rowLayout.implicitWidth + height * 0.25
 
 
     RowLayout {
         id: rowLayout
-        spacing: backgroundRect.height * 0.125
+        spacing: workspaceBarRoot.height * 0.125
         anchors.centerIn: parent
 
         Repeater {
-            model: Hyprland.workspaces.values.filter(workspace => workspace.monitor.name === backgroundRect.screen.name)
+            model: Hyprland.workspaces.values.filter(workspace => workspace.monitor.name === workspaceBarRoot.screen.name)
             delegate: Rectangle {
                 id: wsRect
                 property var workspaceItem: modelData
                 property bool hovered: false
                 property color hoverColor: Scheme.primaryContainer
 
-                Layout.preferredWidth: backgroundRect.height * 0.75
-                Layout.preferredHeight: backgroundRect.height * 0.75
+                Layout.preferredWidth: workspaceBarRoot.height * 0.75
+                Layout.preferredHeight: workspaceBarRoot.height * 0.75
                 radius: 4
                 
                 border.width: 1
