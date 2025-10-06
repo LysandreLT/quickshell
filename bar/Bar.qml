@@ -37,7 +37,7 @@ Item{
 
                 Rectangle {
                     Layout.fillHeight: true
-                    implicitWidth: leftLayout.implicitWidth
+                    implicitWidth: leftLayout.implicitWidth + height * 0.25
                     
                     color: Scheme.surface
                     border.color: Scheme.outline
@@ -46,7 +46,8 @@ Item{
 
                     RowLayout {
                         id: leftLayout
-                        anchors.fill: parent
+                        height: parent.height
+                        anchors.left: parent.left
                         spacing: 0
                         
                         PowerButton { Layout.fillHeight: true }
@@ -61,7 +62,7 @@ Item{
 
                 Rectangle {
                     Layout.fillHeight: true
-                    implicitWidth: middleLayout.implicitWidth
+                    implicitWidth: middleLayout.implicitWidth + height * 0.25
                     
                     color: Scheme.surface
                     border.color: Scheme.outline
@@ -70,7 +71,8 @@ Item{
                     
                     RowLayout {
                         id: middleLayout
-                        anchors.fill: parent
+                        height: parent.height
+                        anchors.horizontalCenter: parent.horizontalCenter
                         spacing: 0
                         
                         WorkspaceBar { Layout.fillHeight: true; screen: barRoot.screen }
@@ -83,7 +85,7 @@ Item{
 
                 Rectangle {
                     Layout.fillHeight: true
-                    implicitWidth: rightLayout.implicitWidth
+                    implicitWidth: rightLayout.implicitWidth + height * 0.25
                     
                     color: Scheme.surface
                     border.color: Scheme.outline
@@ -92,7 +94,8 @@ Item{
                     
                     RowLayout {
                         id: rightLayout
-                        anchors.fill: parent
+                        height: parent.height
+                        anchors.right: parent.right
                         spacing: 0
                         
                         WeatherWidget { Layout.fillHeight: true }
