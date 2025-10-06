@@ -30,9 +30,9 @@ Item {
             Layout.preferredWidth: systemInfoRoot.height * 0.75
             Layout.preferredHeight: systemInfoRoot.height * 0.75
             value: 0
-            primaryColor: Scheme.secondary
-            primaryContainerColor: Scheme.secondaryContainer
-            textOnPrimaryContainerColor: Scheme.textOnSecondaryContainer
+            primaryColor: Scheme.primary
+            primaryContainerColor: Scheme.primaryContainer
+            textOnPrimaryContainerColor: Scheme.textOnPrimaryContainer
             iconUrl: "../../icons/gpu.svg"
         }
 
@@ -41,9 +41,9 @@ Item {
             Layout.preferredWidth: systemInfoRoot.height * 0.75
             Layout.preferredHeight: systemInfoRoot.height * 0.75
             value: 0
-            primaryColor: Scheme.tertiary
-            primaryContainerColor: Scheme.tertiaryContainer
-            textOnPrimaryContainerColor: Scheme.textOnTertiaryContainer
+            primaryColor: Scheme.primary
+            primaryContainerColor: Scheme.primaryContainer
+            textOnPrimaryContainerColor: Scheme.textOnPrimaryContainer
             iconUrl: "../../icons/disk.svg"
         }
     }
