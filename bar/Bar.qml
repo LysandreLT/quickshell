@@ -7,6 +7,7 @@ import "clock"
 import "weather"
 import "systemTray"
 import "systemInfo"
+import "soundVolume"
 import qs.utils
 
 Item{
@@ -50,6 +51,7 @@ Item{
                         
                         PowerButton { Layout.fillHeight: true }
                         SystemInfo { Layout.fillHeight: true }
+                        VolumeWidget { Layout.fillHeight: true }
                     }
                 }
 
