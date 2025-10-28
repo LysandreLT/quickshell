@@ -1,23 +1,24 @@
+import QtQuick
 import QtQuick.Layouts
 import Quickshell.Io
 import Quickshell
 import qs.utils
 
-PanelWindow {
+Item {
     id: root
-    visible: false
     implicitHeight: layout.implicitHeight
     implicitWidth: layout.implicitWidth
+    required property int buttonHeight
+
+    signal clicked()
 
     ColumnLayout {
         id: layout
-        anchors.fill: parent
-        spacing: 1
+        spacing: 0
 
         MenuButton {
-            text: "Shutdown"
-            backgroundColor: Scheme.primaryContainer
-            textColor: Scheme.textOnPrimaryContainer
+            iconUrl: "../../icons/power.svg"
+            height: buttonHeight
             onClicked: shutdownProcess.running = true
             Process {
                 id: shutdownProcess
@@ -27,11 +28,10 @@ PanelWindow {
         }
 
         MenuButton {
-            text: "Sleep"
-            backgroundColor: Scheme.primaryContainer
-            textColor: Scheme.textOnPrimaryContainer
+            iconUrl: "../../icons/sleep.svg"
+            height: buttonHeight
             onClicked: {
-                root.visible = false
+                root.clicked()                
                 sleepProcess.running = true
             }
             Process {
@@ -42,9 +42,8 @@ PanelWindow {
         }
 
         MenuButton {
-            text: "Reboot"
-            backgroundColor: Scheme.primaryContainer
-            textColor: Scheme.textOnPrimaryContainer
+            iconUrl: "../../icons/refresh.svg"
+            height: buttonHeight
             onClicked: rebootProcess.running = true
             Process {
                 id: rebootProcess
@@ -54,11 +53,10 @@ PanelWindow {
         }
 
         MenuButton {
-            text: "Lock"
-            backgroundColor: Scheme.primaryContainer
-            textColor: Scheme.textOnPrimaryContainer
+            iconUrl: "../../icons/lock.svg"
+            height: buttonHeight
             onClicked: {
-                root.visible = false
+                root.clicked()
                 lockProcess.running = true
             }
             Process {

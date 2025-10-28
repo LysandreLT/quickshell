@@ -1,22 +1,40 @@
 import QtQuick
 import Quickshell.Widgets
+import Qt5Compat.GraphicalEffects
+import qs.utils
 
 WrapperMouseArea {
     id : menuButtonRoot
-    required property string text
-    property color backgroundColor
-    property color textColor
+    required property url iconUrl
+
+    implicitWidth: menuButtonRoot.height * 1.618
+    implicitHeight: menuButtonRoot.height
 
     Rectangle {
-        id: button
-        implicitWidth: 200
-        implicitHeight: implicitWidth / 1.618
-        color: menuButtonRoot.backgroundColor
-    
-        Text {
-            text: menuButtonRoot.text
+        implicitWidth:  parent.width
+        height: parent.height
+        color: Scheme.surface
+
+        Rectangle {
+            color: Scheme.primaryContainer
+            height: parent.height * 0.8
+            width: parent.width * 0.8
             anchors.centerIn: parent
-            color: menuButtonRoot.textColor
+            radius: 4
+
+            Image {
+                id: iconImage
+                source: iconUrl
+                anchors.centerIn: parent
+                sourceSize.width: menuButtonRoot.height * 0.8
+                sourceSize.height: menuButtonRoot.height * 0.8
+            }
+
+            ColorOverlay {
+                anchors.fill: iconImage
+                source: iconImage
+                color: Scheme.textOnPrimaryContainer
+            }
         }
     }
 }

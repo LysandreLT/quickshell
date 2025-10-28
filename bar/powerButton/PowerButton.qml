@@ -1,3 +1,5 @@
+import Quickshell
+import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -6,7 +8,6 @@ import qs.utils
 
 Item {
     id: powerButtonRoot
-    property alias menu: powerMenu
     implicitWidth: height * 1.618
 
     Rectangle {
@@ -37,14 +38,34 @@ Item {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: powerButtonRoot.menu.visible = !powerButtonRoot.menu.visible
+            onClicked: {
+                powerMenuWindow.visible = !powerMenuWindow.visible
+                powerMenuWindowFocusGrab.active = true
+            }
         }
-    }
 
-    PowerMenu {
-        id: powerMenu
-        anchors.top: powerButtonRoot.bottom
-        anchors.left: powerButtonRoot.left
+        PopupWindow {
+            id: powerMenuWindow
+            anchor.item: powerButtonRoot
+            anchor.gravity: Edges.Bottom
+            anchor.edges: Edges.Bottom
+            implicitHeight: powerMenu.implicitHeight
+            implicitWidth: powerMenu.implicitWidth
+            color: "transparent"
+            visible: false
+
+            PowerMenu {
+                id: powerMenu
+                onClicked: powerMenuWindow.visible = false
+                buttonHeight: powerButtonRoot.height
+            }
+
+            HyprlandFocusGrab {
+                id: powerMenuWindowFocusGrab
+                windows: [ powerMenuWindow ]
+                onCleared: powerMenuWindow.visible = false
+            }
+        }
     }
 }
 
